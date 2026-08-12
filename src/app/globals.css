@@ -3,71 +3,47 @@
 @tailwind utilities;
 
 :root {
-  /* Directionless Brutalist Scaling System */
-  --size-unit: 16;
-  --size-container-ideal: 1728;
-  --size-container-min: 992px;
-  --size-container-max: 1920px;
-  --size-container: clamp(var(--size-container-min), 100vw, var(--size-container-max));
-  --size-font: calc(var(--size-container) / (var(--size-container-ideal) / var(--size-unit)));
-
-  /* Cloudstudio Color System (High Contrast Brutalism) */
-  --bg: #FFF48D; /* Default Yellow */
-  --accent: #FFF48D;
-  --ink: #0e0e0c;
+  --bg: #FFF48D; --bg-rgb: 255,244,141;
+  --accent: #FFF48D; --accent-rgb: 255,244,141;
+  --ink: #0e0e0c; --ink-rgb: 14,14,12;
   --paper: #faf7ea;
-  
-  --ink-soft: #3a3a30;
-  --ink-mute: #8f8f80;
+  --ink-soft: #3a3a30; --ink-mute: #8f8f80;
 }
 
-@media screen and (max-width: 991px) {
-  :root {
-    --size-container-ideal: 768;
-    --size-container-min: 768px;
-    --size-container-max: 991px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  :root {
-    --size-container-ideal: 550;
-    --size-container-min: 480px;
-    --size-container-max: 767px;
-  }
-}
-
-body {
-  transition: background-color 350ms ease, color 350ms ease;
-  font-size: var(--size-font);
-  color: var(--ink);
+html, body {
   background: var(--bg);
-  /* Cloudstudio styling */
+  color: var(--ink);
+  font-family: var(--font-bricolage), sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
   margin: 0;
 }
 
-/* Theme shifts triggered by GSAP */
-body[data-theme="dark"] {
-  --bg: #0e0e0c;
-  --ink: #faf7ea;
-}
-
-body[data-theme="grey"] {
-  --bg: #1e1e1e;
-  --ink: #f4f4f4;
-}
-
-body[data-theme="yellow"] {
-  --bg: #FFF48D;
-  --ink: #0e0e0c;
-}
-
 ::selection {
   background: var(--ink);
   color: var(--accent);
+}
+
+.mono {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+/* Animations from Cloudstudio */
+@keyframes cs-spin {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes cs-blink {
+  50% { opacity: 0; }
+}
+
+@keyframes cs-rotword {
+  0%, 15% { transform: translateY(0); }
+  25%, 40% { transform: translateY(-1em); }
+  50%, 65% { transform: translateY(-2em); }
+  75%, 90% { transform: translateY(-3em); }
+  100% { transform: translateY(-4em); }
 }
 
 /* Lenis Smooth Scroll Fixes */
@@ -85,29 +61,4 @@ html.lenis, html.lenis body {
 }
 .lenis.lenis-smooth iframe {
   pointer-events: none;
-}
-
-/* Typography Utility Classes based on references */
-.sg-text-huge {
-  font-size: clamp(3rem, 11vw, 11rem);
-  line-height: 0.9;
-  letter-spacing: -0.045em;
-  font-weight: 700;
-}
-.sg-text-large {
-  font-size: clamp(2.2rem, 5vw, 4.8rem);
-  line-height: 0.94;
-  letter-spacing: -0.03em;
-  font-weight: 700;
-}
-.sg-text-body {
-  font-size: clamp(15px, 1.2vw, 18px);
-  line-height: 1.55;
-  font-weight: 500;
-}
-.sg-mono-label {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
 }
