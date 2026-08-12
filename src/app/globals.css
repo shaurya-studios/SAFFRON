@@ -1,145 +1,86 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --color-paper-bg: #030101;
-  --color-paper: #0c0808;
-  --color-paper-alt: #100b0b;
-  --color-ink-primary: #D4C3B3; /* warm parchment/copper hue */
-  --color-ink-secondary: #a6917f;
-  --color-ink-muted: #736052;
-  --color-saffron-accent: #7a1515;
-  --color-saffron-dark: #520909;
-  --color-border-subtle: #241919;
+  --color-saffron-gold: #C8781E;
+  --color-aged-parchment: #EDE1C4;
+  --color-ink-brown: #2A2015;
+  --color-char-umbra: #16110B;
+  --color-thread-vermilion: #A63A2C;
+  --color-dust-gold: #E8B857;
+
+  --font-fraunces: var(--font-fraunces), serif;
+  --font-newsreader: var(--font-newsreader), serif;
+  --font-space-grotesk: var(--font-space-grotesk), sans-serif;
 }
 
 @layer base {
   :root {
-    background-color: var(--color-paper-bg);
-    color: var(--color-ink-primary);
+    background-color: var(--color-char-umbra);
+    color: var(--color-aged-parchment);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color-scheme: dark;
   }
   
   body {
-    background-color: var(--color-paper-bg);
+    background-color: var(--color-char-umbra);
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow: hidden;
+    overscroll-behavior: none;
   }
 
-  /* Force font families */
-  .font-serif { font-family: var(--font-cinzel), serif !important; }
-  .font-body { font-family: var(--font-cormorant), serif !important; }
-  .font-sans { font-family: var(--font-montserrat), sans-serif !important; }
-  
   ::selection {
-    background-color: var(--color-saffron-accent);
-    color: #fff;
+    background-color: var(--color-saffron-gold);
+    color: var(--color-char-umbra);
   }
 }
 
 @layer utilities {
-  .preserve-3d {
-    transform-style: preserve-3d;
+  .font-display { font-family: var(--font-fraunces) !important; }
+  .font-body { font-family: var(--font-newsreader) !important; }
+  .font-ui { font-family: var(--font-space-grotesk) !important; }
+
+  .canvas-container {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .canvas-interactive {
+    pointer-events: auto;
   }
   
-  .backface-hidden {
-    backface-visibility: hidden;
+  .html-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+  }
+
+  .book-text-content {
+    color: var(--color-ink-brown);
+    line-height: 1.6;
+    font-size: clamp(17px, 2.2vw, 20px);
+  }
+
+  .book-text-content p {
+    margin-bottom: 1.5em;
   }
   
-  .perspective-book {
-    perspective: 2000px;
-  }
-
-  .paper-texture {
-    background-image: url("/images/charcoal_texture.jpg");
-    background-size: cover;
-    background-position: center;
-    background-color: var(--color-paper);
-  }
-
-  .cover-texture {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.12'/%3E%3C/svg%3E");
-    background-color: #080303;
-  }
-
-  .spine-shadow {
-    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 8%, rgba(255,255,255,0.03) 15%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 85%, rgba(0,0,0,0.4) 95%, rgba(0,0,0,0.8) 100%);
-  }
-
-  .page-shadow-left {
-    box-shadow: inset -30px 0 40px -10px rgba(0, 0, 0, 0.7), inset -2px 0 5px rgba(0,0,0,0.8);
-  }
-  
-  .page-shadow-right {
-    box-shadow: inset 30px 0 40px -10px rgba(0, 0, 0, 0.7), inset 2px 0 5px rgba(0,0,0,0.8);
-  }
-  
-  .book-shadow {
-    box-shadow: 
-      0 30px 60px rgba(0, 0, 0, 0.95), 
-      0 10px 25px rgba(0, 0, 0, 0.8), 
-      0 0 0 1px rgba(255,255,255,0.05);
-  }
-
-  .book-edge-right {
-    box-shadow: 
-      inset -30px 0 40px -10px rgba(0, 0, 0, 0.7),
-      inset -2px 0 5px rgba(0,0,0,0.8),
-      1px 0 0 #2a1f1f, 2px 0 0 #1a1010, 3px 0 0 #2a1f1f, 4px 0 0 #1a1010, 5px 0 0 #2a1f1f, 6px 0 0 #1a1010, 7px 0 0 #2a1f1f, 8px 0 0 #1a1010;
-  }
-
-  .book-edge-left {
-    box-shadow: 
-      inset 30px 0 40px -10px rgba(0, 0, 0, 0.7),
-      inset 2px 0 5px rgba(0,0,0,0.8),
-      -1px 0 0 #2a1f1f, -2px 0 0 #1a1010, -3px 0 0 #2a1f1f, -4px 0 0 #1a1010, -5px 0 0 #2a1f1f, -6px 0 0 #1a1010, -7px 0 0 #2a1f1f, -8px 0 0 #1a1010;
-  }
-
-  .page-edge {
-    background: repeating-linear-gradient(
-      90deg,
-      #140d0d,
-      #140d0d 1px,
-      #080404 1px,
-      #080404 2px
-    );
-  }
-
-  /* Classic Book Typesetting */
-  .book-content {
-    line-height: 1.7;
-  }
-  
-  .book-content p {
-    margin-bottom: 1.25rem;
-    text-align: left;
-  }
-  
-  .book-content p:last-child {
+  .book-text-content p:last-child {
     margin-bottom: 0;
   }
-
-  .doodle-stroke {
-    filter: url(#handdrawn-filter);
-    stroke: var(--color-saffron-dark);
-    fill: none;
-    transition: all 0.5s ease;
-  }
   
-  .book-content p.italic {
+  .book-text-content em, 
+  .book-text-content i {
     font-style: italic;
-  }
-  
-  .drop-cap::first-letter {
-    float: left;
-    font-size: 4em;
-    line-height: 0.8;
-    padding-top: 0.05em;
-    padding-right: 0.1em;
-    margin-right: 0.1em;
-    font-family: var(--font-cinzel), serif;
-    color: var(--color-saffron-accent);
+    font-family: var(--font-newsreader);
   }
 }
