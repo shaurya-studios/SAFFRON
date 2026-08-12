@@ -23,7 +23,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'SAFFRON — An Interactive Story',
+  title: 'SAFFRON â€” An Interactive Story',
   description: 'An interactive book experience.',
 };
 
@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="\\ \ \\">
+    <html lang="en" className={`${fraunces.variable} ${newsreader.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-char-umbra text-ink-brown font-body antialiased overflow-hidden selection:bg-saffron-gold selection:text-char-umbra">
         {children}
       </body>

@@ -1,7 +1,7 @@
 export const chapter2 = [
   {
     page: 1,
-    content: \Jordan sat with the school diary open in front of him, turning page after page.
+    content: `Jordan sat with the school diary open in front of him, turning page after page.
 
 Roswaal watched him for a while.
 
@@ -13,11 +13,11 @@ Jordan didn't look up.
 
 "Why?"
 
-"To find some way to legally protect Clara from those girls and the trouble they're causing."\
+"To find some way to legally protect Clara from those girls and the trouble they're causing."`
   },
   {
     page: 2,
-    content: \Roswaal sighed.
+    content: `Roswaal sighed.
 
 "I'm sad for you."
 
@@ -31,11 +31,11 @@ Jordan stared at him.
 
 "How? Are you joking?"
 
-"No. I'm serious. You're searching for solutions like a drug addict."\
+"No. I'm serious. You're searching for solutions like a drug addict."`
   },
   {
     page: 3,
-    content: \Jordan shook his head.
+    content: `Jordan shook his head.
 
 "Oh, bruh. Come on. I'm serious and you're joking. There's nothing useful here."
 
@@ -47,11 +47,11 @@ Jordan closed the diary.
 
 "I guess I will. Come on. Let's go outside. It's lunch time."
 
-"Okay."\
+"Okay."`
   },
   {
     page: 4,
-    content: \The next day, Jordan arrived at school and noticed Clara walking toward him.
+    content: `The next day, Jordan arrived at school and noticed Clara walking toward him.
 
 For a brief moment, he thought she was finally coming to talk to him.
 
@@ -65,11 +65,11 @@ Something about that moment stayed with him.
 
 When he entered the classroom, Roswaal immediately noticed his expression.
 
-"What happened?"\
+"What happened?"`
   },
   {
     page: 5,
-    content: \Jordan sat down.
+    content: `Jordan sat down.
 
 "Nothing."
 
@@ -81,11 +81,11 @@ For once, Clara was left alone.
 
 But before leaving school the previous day, the girls had scribbled across Clara's desk.
 
-Jordan stared at it.\
+Jordan stared at it.`
   },
   {
     page: 6,
-    content: \After school, he went back to Clara's classroom.
+    content: `After school, he went back to Clara's classroom.
 
 He cleaned the desk himself.
 
@@ -99,11 +99,11 @@ Neither of them said anything.
 
 That evening, Jordan overheard his parents talking.
 
-His father answered the phone.\
+His father answered the phone.`
   },
   {
     page: 7,
-    content: \His mother spoke first.
+    content: `His mother spoke first.
 
 "Do you have any money?"
 
@@ -117,11 +117,11 @@ His father sighed.
 
 He checked.
 
-Only five hundred rupees remained.\
+Only five hundred rupees remained.`
   },
   {
     page: 8,
-    content: \After recent expenses, four hundred had already been spent.
+    content: `After recent expenses, four hundred had already been spent.
 
 His mother went quiet.
 
@@ -135,11 +135,11 @@ May 11th.
 
 Twenty days.
 
-Twenty days on almost nothing.\
+Twenty days on almost nothing.`
   },
   {
     page: 9,
-    content: \He heard enough of the conversation to understand what was happening.
+    content: `He heard enough of the conversation to understand what was happening.
 
 "Mom?"
 
@@ -149,15 +149,15 @@ Twenty days on almost nothing.\
 
 She looked at him.
 
-"Jordan—"
+"Jordanâ€”"
 
 But he had already left.
 
-He ran straight to Roswaal's house and told him everything.\
+He ran straight to Roswaal's house and told him everything.`
   },
   {
     page: 10,
-    content: \Roswaal listened quietly.
+    content: `Roswaal listened quietly.
 
 Jordan had finally started to understand that Clara wasn't the only person he was trying to save.
 
@@ -171,6 +171,6 @@ For the first time, he didn't think about looking cool.
 
 He thought about responsibility.
 
-And he knew he couldn't avoid it anymore.\
+And he knew he couldn't avoid it anymore.`
   }
 ];

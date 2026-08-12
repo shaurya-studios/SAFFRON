@@ -1,7 +1,7 @@
 export const chapter3 = [
   {
     page: 1,
-    content: \Jordan sat with Roswaal late into the evening.
+    content: `Jordan sat with Roswaal late into the evening.
 
 Neither of them was joking.
 
@@ -15,11 +15,11 @@ Roswaal thought for a moment.
 
 Jordan hesitated.
 
-"Honestly?"\
+"Honestly?"`
   },
   {
     page: 2,
-    content: \"Yeah."
+    content: `"Yeah."
 
 "I don't have any."
 
@@ -33,11 +33,11 @@ Jordan looked at him.
 
 "Tell me."
 
-"You can work at my father's office."\
+"You can work at my father's office."`
   },
   {
     page: 3,
-    content: \Jordan blinked.
+    content: `Jordan blinked.
 
 "For what?"
 
@@ -53,11 +53,11 @@ Jordan looked at him.
 
 Jordan stared at him.
 
-"Boxing gyms?"\
+"Boxing gyms?"`
   },
   {
     page: 4,
-    content: \Roswaal nodded.
+    content: `Roswaal nodded.
 
 "What does your father do?"
 
@@ -73,11 +73,11 @@ Roswaal shrugged.
 
 Jordan thought about it.
 
-"How much would I earn?"\
+"How much would I earn?"`
   },
   {
     page: 5,
-    content: \"Around two to three thousand rupees a month."
+    content: `"Around two to three thousand rupees a month."
 
 Jordan nodded slowly.
 
@@ -93,11 +93,11 @@ When he reached the school, the first thing he did was look for Clara.
 
 She was there.
 
-Jordan felt a strange sense of relief.\
+Jordan felt a strange sense of relief.`
   },
   {
     page: 6,
-    content: \He didn't understand why seeing her had become so important to him.
+    content: `He didn't understand why seeing her had become so important to him.
 
 He entered his classroom.
 
@@ -113,11 +113,11 @@ Roswaal walked over.
 
 "Hey, Jordan."
 
-"Yo, bro. Did you ask your father?"\
+"Yo, bro. Did you ask your father?"`
   },
   {
     page: 7,
-    content: \"Yeah. He said he'd give you 3,500 rupees per month."
+    content: `"Yeah. He said he'd give you 3,500 rupees per month."
 
 Jordan smiled.
 
@@ -133,11 +133,11 @@ Jordan looked at him.
 
 "His name is Tony."
 
-"Tony?"\
+"Tony?"`
   },
   {
     page: 8,
-    content: \"Yeah."
+    content: `"Yeah."
 
 Jordan glanced toward the hallway.
 
@@ -155,11 +155,11 @@ There was something different about him.
 
 ---
 
-After school, Jordan went to the boxing gym.\
+After school, Jordan went to the boxing gym.`
   },
   {
     page: 9,
-    content: \The coach was there.
+    content: `The coach was there.
 
 So was Tony.
 
@@ -175,11 +175,11 @@ He didn't look like someone who had just started boxing.
 
 The coach noticed Jordan watching.
 
-"Jordan."\
+"Jordan."`
   },
   {
     page: 10,
-    content: \"Yeah, coach?"
+    content: `"Yeah, coach?"
 
 "Come here."
 
@@ -195,11 +195,11 @@ He walked over to Tony.
 
 "Hey."
 
-Tony turned.\
+Tony turned.`
   },
   {
     page: 11,
-    content: \"Yeah?"
+    content: `"Yeah?"
 
 "I'm Jordan."
 
@@ -215,11 +215,11 @@ Tony continued wrapping his hands.
 
 Jordan raised an eyebrow.
 
-"Five years?"\
+"Five years?"`
   },
   {
     page: 12,
-    content: \Tony nodded.
+    content: `Tony nodded.
 
 "Started when I was ten."
 
@@ -237,11 +237,11 @@ Jordan smiled.
 
 ---
 
-Later, Jordan went to his father's office.\
+Later, Jordan went to his father's office.`
   },
   {
     page: 13,
-    content: \The work was simple.
+    content: `The work was simple.
 
 Delivering supplies.
 
@@ -257,11 +257,11 @@ It wasn't easy.
 
 But Jordan didn't complain.
 
-He kept coming back.\
+He kept coming back.`
   },
   {
     page: 14,
-    content: \Day after day.
+    content: `Day after day.
 
 Slowly, he began understanding how everything worked.
 
@@ -277,11 +277,11 @@ Responsibility.
 
 The work was tiring, but there was something strangely satisfying about knowing that he was contributing to his family.
 
-One evening, his father stopped him.\
+One evening, his father stopped him.`
   },
   {
     page: 15,
-    content: \"You're learning quickly."
+    content: `"You're learning quickly."
 
 Jordan shrugged.
 
@@ -297,11 +297,11 @@ But he remembered those words.
 
 ---
 
-That night, Jordan returned home.\
+That night, Jordan returned home.`
   },
   {
     page: 16,
-    content: \His mother was waiting.
+    content: `His mother was waiting.
 
 "Jordan, where were you?"
 
@@ -317,11 +317,11 @@ She smiled.
 
 "Your favorite dinner is ready."
 
-Jordan sat down.\
+Jordan sat down.`
   },
   {
     page: 17,
-    content: \Then he asked,
+    content: `Then he asked,
 
 "How much did it cost?"
 
@@ -329,7 +329,7 @@ His mother frowned.
 
 "Why are you asking that? Just eat."
 
-"But—"
+"Butâ€”"
 
 "We have enough this month."
 
@@ -337,11 +337,11 @@ Jordan looked at the food.
 
 His mother smiled.
 
-"Eat."\
+"Eat."`
   },
   {
     page: 18,
-    content: \Jordan finally did.
+    content: `Jordan finally did.
 
 Later that night, he went to the roof.
 
@@ -357,11 +357,11 @@ Because he had finally understood how much his family had been hiding from him.
 
 He wiped his face.
 
-"I'll fix this."\
+"I'll fix this."`
   },
   {
     page: 19,
-    content: \---
+    content: `---
 
 The next morning, Jordan woke before his alarm.
 
@@ -377,11 +377,11 @@ One life.
 
 And somehow, he had to keep all three together.
 
-At the boxing gym, Tony was training again.\
+At the boxing gym, Tony was training again.`
   },
   {
     page: 20,
-    content: \Jordan watched him.
+    content: `Jordan watched him.
 
 Tony was improving.
 
@@ -397,11 +397,11 @@ Tony turned.
 
 "I heard you've been boxing for five years."
 
-"Yeah."\
+"Yeah."`
   },
   {
     page: 21,
-    content: \Jordan smiled.
+    content: `Jordan smiled.
 
 "Then let's see what you've got."
 
@@ -409,6 +409,6 @@ Tony stepped forward.
 
 The two entered the ring.
 
-Neither of them knew it yet, but Tony's arrival was about to change Jordan's life in ways that had nothing to d\
+Neither of them knew it yet, but Tony's arrival was about to change Jordan's life in ways that had nothing to d`
   }
 ];

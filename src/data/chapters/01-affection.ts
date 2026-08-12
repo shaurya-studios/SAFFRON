@@ -1,7 +1,7 @@
 export const chapter1 = [
   {
     page: 1,
-    content: \Jordan Bennet walked through the school corridor, trying very hard not to look nervous.
+    content: `Jordan Bennet walked through the school corridor, trying very hard not to look nervous.
 
 It was his first day at a new school.
 
@@ -17,11 +17,11 @@ There was only one empty one.
 
 The last seat.
 
-*Shit. I thought I'd sit alone so everyone would think I was a cool sigma boy.*\
+*Shit. I thought I'd sit alone so everyone would think I was a cool sigma boy.*`
   },
   {
     page: 2,
-    content: \Trying to maintain his dignity, Jordan walked toward the back of the classroom and placed his bag on the bench.
+    content: `Trying to maintain his dignity, Jordan walked toward the back of the classroom and placed his bag on the bench.
 
 A boy was already sitting beside him.
 
@@ -41,11 +41,11 @@ Roswaal nodded.
 
 For a while, they sat quietly.
 
-Then Roswaal suddenly asked,\
+Then Roswaal suddenly asked,`
   },
   {
     page: 3,
-    content: \"Do you have a crush?"
+    content: `"Do you have a crush?"
 
 Jordan answered calmly. He believed that speaking without emotion would make him look dominant and mysterious.
 
@@ -61,11 +61,11 @@ Neither of them noticed the teacher watching them.
 
 Both froze.
 
-"Sorry, ma'am."\
+"Sorry, ma'am."`
   },
   {
     page: 4,
-    content: \Jordan lowered his head.
+    content: `Jordan lowered his head.
 
 His first day was already going badly.
 
@@ -83,13 +83,13 @@ Nothing.
 
 Roswaal understood what was happening.
 
-A terrible idea entered his mind.\
+A terrible idea entered his mind.`
   },
   {
     page: 5,
-    content: \He prepared his legendary supersonic slap.
+    content: `He prepared his legendary supersonic slap.
 
-And then—
+And thenâ€”
 
 SMACK.
 
@@ -103,11 +103,11 @@ The teacher's patience finally disappeared.
 
 She slapped both boys.
 
-"You two! Raise your hands. And if you cause any more trouble, you're going straight to the principal's office."\
+"You two! Raise your hands. And if you cause any more trouble, you're going straight to the principal's office."`
   },
   {
     page: 6,
-    content: \Jordan became emotional.
+    content: `Jordan became emotional.
 
 Not because he was sad.
 
@@ -123,11 +123,11 @@ Four girls were surrounding another girl.
 
 He stood up and walked toward them.
 
-Then he stopped.\
+Then he stopped.`
   },
   {
     page: 7,
-    content: \He knew her.
+    content: `He knew her.
 
 Clara Whitmore.
 
@@ -147,11 +147,11 @@ Jordan didn't answer.
 
 Roswaal looked toward Clara.
 
-"Do you like her?"\
+"Do you like her?"`
   },
   {
     page: 8,
-    content: \Jordan remained silent.
+    content: `Jordan remained silent.
 
 Roswaal understood.
 
@@ -169,11 +169,11 @@ Roswaal turned to him again.
 
 Jordan looked away.
 
-"Actually, I hate her."\
+"Actually, I hate her."`
   },
   {
     page: 9,
-    content: \Roswaal raised an eyebrow.
+    content: `Roswaal raised an eyebrow.
 
 "You have to swear on your mother."
 
@@ -189,11 +189,11 @@ Jordan gave a quiet laugh.
 
 His smile faded as his eyes drifted toward Clara.
 
-"But at least I found something worth dying for."\
+"But at least I found something worth dying for."`
   },
   {
     page: 10,
-    content: \Roswaal laughed.
+    content: `Roswaal laughed.
 
 "Bro, she hasn't even talked to you. She doesn't even know your name."
 
@@ -207,11 +207,11 @@ Afterward, Jordan couldn't stop thinking about the bullying.
 
 Roswaal answered,
 
-"Those four girls are powerful because their fathers are involved in politics. They don't like anyone who disobeys them."\
+"Those four girls are powerful because their fathers are involved in politics. They don't like anyone who disobeys them."`
   },
   {
     page: 11,
-    content: \Jordan frowned.
+    content: `Jordan frowned.
 
 "How can I help her?"
 
@@ -227,11 +227,11 @@ Jordan nodded.
 
 "That'll work for a few days. It gives me time to find something permanent."
 
-"I'll help you."\
+"I'll help you."`
   },
   {
     page: 12,
-    content: \Jordan looked at him.
+    content: `Jordan looked at him.
 
 "Are you a little shit?"
 
@@ -247,11 +247,11 @@ Roswaal suddenly looked toward the window.
 
 "Look! There's an eagle outside."
 
-Jordan turned.\
+Jordan turned.`
   },
   {
     page: 13,
-    content: \Roswaal smashed his notebook against his head.
+    content: `Roswaal smashed his notebook against his head.
 
 Jordan stared at him in disbelief.
 
@@ -263,6 +263,6 @@ Neither noticed the teacher standing directly behind them.
 
 "Both of you."
 
-They froze.\
+They froze.`
   }
 ];

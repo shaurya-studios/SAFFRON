@@ -6,7 +6,7 @@ import { chapters } from '@/data/chapters';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 export default function RibbonBookmark() {
-  const { currentChapter, currentPage, setChapter, setPage, transitionLocked } = useBookStore();
+  const { currentChapter, currentPage, transitionLocked } = useBookStore();
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
   // Get current ribbon color based on chapter
@@ -37,7 +37,7 @@ export default function RibbonBookmark() {
         right: ribbonRight,
         width: isDesktop ? '24px' : '16px',
         height: ribbonHeight,
-        background: \linear-gradient(to bottom, \ 0%, \ \%, rgba(0,0,0,0.5) 100%)\,
+        background: `linear-gradient(to bottom, ${ribbonColor} 0%, ${ribbonColor} ${progressPercent}%, rgba(0,0,0,0.5) 100%)`,
         boxShadow: '0 4px 12px rgba(0,0,0,0.4), inset -1px 0 2px rgba(0,0,0,0.3)',
         borderBottomLeftRadius: '4px',
         borderBottomRightRadius: '4px',
@@ -48,7 +48,7 @@ export default function RibbonBookmark() {
       <div 
         className="w-full h-full absolute top-0 left-0"
         style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\\'0 0 4 4\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cpath d=\\'M0 0h1v4H0zm2 0h1v4H2z\\' fill=\\'%23ffffff\\' fill-opacity=\\'0.1\\'/%3E%3C/svg%3E")',
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 4 4\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0 0h1v4H0zm2 0h1v4H2z\' fill=\'%23ffffff\' fill-opacity=\'0.1\'/%3E%3C/svg%3E")',
           backgroundSize: '4px 4px',
           mixBlendMode: 'overlay',
           opacity: 0.5
