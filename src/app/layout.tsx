@@ -1,41 +1,34 @@
-import type { Metadata } from 'next';
-import { Fraunces, Newsreader, Space_Grotesk } from 'next/font/google';
-import './globals.css';
+import type { Metadata } from "next";
+import { Bricolage_Grotesque, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import SmoothScroller from "@/components/SmoothScroller";
 
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-fraunces',
-  axes: ['opsz'],
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-bricolage",
 });
 
-const newsreader = Newsreader({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-newsreader',
-  style: ['normal', 'italic'],
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-space-grotesk',
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
 });
 
 export const metadata: Metadata = {
-  title: 'SAFFRON — An Interactive Story',
-  description: 'An interactive book experience.',
+  title: "SAFFRON — An Interactive Story",
+  description: "A digital reading experience.",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${newsreader.variable} ${spaceGrotesk.variable}`}>
-      <body className="bg-char-umbra text-ink-brown font-body antialiased overflow-hidden selection:bg-saffron-gold selection:text-char-umbra">
-        {children}
+    <html lang="en">
+      <body className={`${bricolage.variable} ${geistMono.variable} antialiased`} data-theme="yellow">
+        <SmoothScroller>
+          {children}
+        </SmoothScroller>
       </body>
     </html>
   );
