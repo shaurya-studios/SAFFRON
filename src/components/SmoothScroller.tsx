@@ -18,6 +18,9 @@ export default function SmoothScroller({ children }: { children: React.ReactNode
       wheelMultiplier: 1,
       touchMultiplier: 2,
     });
+    
+    // @ts-ignore
+    window.lenis = lenis;
 
     function raf(time: number) {
       lenis.raf(time);

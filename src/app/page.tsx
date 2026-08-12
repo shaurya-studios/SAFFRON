@@ -12,17 +12,24 @@ export default function Home() {
   const wipeRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    // Exact GSAP Stagger Reveal for Hero
+    // 1. On Mount: Wipe Curtain Animation (Screen starts black, then scales down)
+    gsap.fromTo(
+      wipeRef.current,
+      { scaleY: 1 },
+      { scaleY: 0, duration: 1.2, ease: 'expo.inOut', delay: 0.1 }
+    );
+
+    // 2. Exact GSAP Stagger Reveal for Hero
     if (heroTextRef.current) {
       const spans = heroTextRef.current.querySelectorAll('.reveal-span');
       gsap.fromTo(
         spans,
         { opacity: 0, y: 38 },
-        { opacity: 1, y: 0, duration: 0.9, stagger: 0.08, ease: 'power3.out', delay: 0.1 }
+        { opacity: 1, y: 0, duration: 0.9, stagger: 0.08, ease: 'power3.out', delay: 0.8 }
       );
     }
     
-    // Marquee animation
+    // 3. Marquee animation
     gsap.to('.cs-marq', {
       xPercent: -50,
       ease: 'none',
@@ -30,7 +37,7 @@ export default function Home() {
       repeat: -1
     });
 
-    // Paragraph stagger reveals
+    // 4. Paragraph stagger reveals
     const pReveals = document.querySelectorAll('.p-reveal');
     pReveals.forEach((p) => {
       gsap.fromTo(p, 
@@ -48,8 +55,22 @@ export default function Home() {
       );
     });
 
+    // 5. Smooth Anchor Scrolling via Lenis
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a');
+      if (anchor && anchor.hash && anchor.hash.startsWith('#')) {
+        e.preventDefault();
+        // @ts-ignore
+        if (window.lenis) window.lenis.scrollTo(anchor.hash);
+        else document.querySelector(anchor.hash)?.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+    document.addEventListener('click', handleAnchorClick);
+
     return () => {
       ScrollTrigger.getAll().forEach(t => t.kill());
+      document.removeEventListener('click', handleAnchorClick);
     };
   }, []);
 
