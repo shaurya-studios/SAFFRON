@@ -12,7 +12,7 @@ export default function Home() {
   const wipeRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    // 1. On Mount: Wipe Curtain Animation (Screen starts black, then scales down)
+    // 1. Wipe Curtain Animation
     gsap.fromTo(
       wipeRef.current,
       { scaleY: 1 },
@@ -37,19 +37,21 @@ export default function Home() {
       repeat: -1
     });
 
-    // 4. Paragraph stagger reveals
-    const pReveals = document.querySelectorAll('.p-reveal');
-    pReveals.forEach((p) => {
-      gsap.fromTo(p, 
-        { opacity: 0, y: 30 },
+    // 4. Scrubbing Reading Experience
+    // The text starts at low opacity and scales down. As it reaches the center, it becomes 100% opaque and scales to 1.
+    const readLines = document.querySelectorAll('.read-line');
+    readLines.forEach((line) => {
+      gsap.fromTo(line, 
+        { opacity: 0.1, scale: 0.95 },
         { 
-          opacity: 1, 
-          y: 0, 
-          duration: 1, 
-          ease: 'power3.out',
+          opacity: 1,
+          scale: 1,
+          ease: 'power1.inOut',
           scrollTrigger: {
-            trigger: p,
-            start: 'top 85%',
+            trigger: line,
+            start: 'top 80%',
+            end: 'top 50%',
+            scrub: true,
           }
         }
       );
@@ -79,24 +81,19 @@ export default function Home() {
       {/* Wipe Curtain */}
       <div ref={wipeRef} className="fixed inset-0 z-[400] bg-ink transform scale-y-0 origin-bottom pointer-events-none" />
 
-      {/* Global grain (using inline SVG like Cloudstudio) */}
       <div className="fixed inset-0 z-[9997] pointer-events-none opacity-5 mix-blend-overlay" style={{backgroundImage: "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22140%22 height=%22140%22 filter=%22url(%23n)%22/></svg>')"}}></div>
       <div className="fixed inset-0 z-[9996] pointer-events-none" style={{background: 'radial-gradient(130% 100% at 50% 45%,transparent 55%,rgba(14,14,12,.18) 100%)'}}></div>
 
       {/* NAV */}
-      <nav id="cs-nav" className="fixed top-0 left-0 right-0 z-[180] flex items-center justify-between px-[clamp(18px,4vw,44px)] py-[18px] transition-all duration-400">
+      <nav id="cs-nav" className="fixed top-0 left-0 right-0 z-[180] flex items-center justify-between px-[clamp(18px,4vw,44px)] py-[18px]">
         <a href="#top" className="no-underline font-extrabold text-[22px] tracking-[-0.03em] text-ink">saffron<span className="text-ink">*</span></a>
         <div className="flex items-center gap-[clamp(12px,2vw,30px)]">
-          <a href="#work" className="no-underline font-semibold text-[15px] text-ink">Work</a>
-          <a href="#faq" className="no-underline font-semibold text-[15px] text-ink">FAQ</a>
-          <a href="#read" className="no-underline font-bold text-[15px] bg-ink text-accent px-[20px] py-[11px] rounded-full transition-transform hover:scale-105">Read Book →</a>
+          <a href="#prologue" className="no-underline font-bold text-[15px] bg-ink text-accent px-[20px] py-[11px] rounded-full transition-transform hover:scale-105">Read Book →</a>
         </div>
       </nav>
 
       {/* HERO */}
-      <header id="top" className="relative min-h-[100svh] flex flex-col justify-center px-[clamp(18px,4vw,44px)] pt-[120px] pb-[60px] overflow-hidden">
-        
-        {/* Spinning Text SVG in corner */}
+      <header id="top" className="relative min-h-[100svh] flex flex-col justify-center px-[clamp(18px,4vw,44px)] pt-[120px] pb-[60px] overflow-hidden bg-bg z-10">
         <div className="absolute right-[clamp(18px,6vw,90px)] top-[18%] w-[clamp(96px,12vw,150px)] h-[clamp(96px,12vw,150px)] z-10">
           <div className="absolute inset-0 animate-[cs-spin_13s_linear_infinite]">
             <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -111,7 +108,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mono text-[13px] tracking-[0.12em] uppercase mb-[clamp(20px,3vw,34px)] flex items-center gap-[12px] opacity-100 transform-none">
+        <div className="mono text-[13px] tracking-[0.12em] uppercase mb-[clamp(20px,3vw,34px)] flex items-center gap-[12px]">
           <span className="w-[9px] h-[9px] rounded-full bg-ink animate-[cs-blink_1.5s_step-end_infinite]"></span>
           <span>Saffron — An Interactive Story</span>
         </div>
@@ -127,7 +124,7 @@ export default function Home() {
           </span></span>
         </h1>
 
-        <div className="relative z-10 flex items-center gap-[clamp(20px,3vw,40px)] flex-wrap mt-[clamp(32px,5vw,56px)] opacity-100">
+        <div className="relative z-10 flex items-center gap-[clamp(20px,3vw,40px)] flex-wrap mt-[clamp(32px,5vw,56px)]">
           <a href="#prologue" className="inline-flex items-center gap-[10px] bg-ink text-accent no-underline font-bold text-[clamp(15px,1.3vw,18px)] px-[32px] py-[18px] rounded-full transition-transform hover:scale-105 hover:-rotate-[1.5deg]">
             Begin Reading →
           </a>
@@ -138,7 +135,7 @@ export default function Home() {
       </header>
 
       {/* MARQUEE BAR */}
-      <div className="bg-ink text-accent overflow-hidden py-[18px] border-t-[3px] border-ink">
+      <div className="bg-ink text-accent overflow-hidden py-[18px] border-t-[3px] border-ink relative z-10">
         <div className="cs-marq flex whitespace-nowrap font-bold text-[clamp(1.4rem,3vw,2.4rem)] tracking-[-0.02em]">
           <span className="px-[0.4em]">Affection</span><span className="px-[0.4em]">✦</span>
           <span className="px-[0.4em]">Situations</span><span className="px-[0.4em]">✦</span>
@@ -148,15 +145,13 @@ export default function Home() {
           <span className="px-[0.4em]">Affection</span><span className="px-[0.4em]">✦</span>
           <span className="px-[0.4em]">Situations</span><span className="px-[0.4em]">✦</span>
           <span className="px-[0.4em]">Management</span><span className="px-[0.4em]">✦</span>
-          <span className="px-[0.4em]">Dhanraj</span><span className="px-[0.4em]">✦</span>
-          <span className="px-[0.4em]">Saffron</span><span className="px-[0.4em]">✦</span>
         </div>
       </div>
 
-      {/* WHAT WE DO -> THE PROLOGUE */}
-      <section id="prologue" className="bg-paper py-[clamp(60px,9vw,140px)] px-[clamp(18px,4vw,44px)] overflow-hidden">
+      {/* THE PROLOGUE */}
+      <section id="prologue" className="bg-paper py-[clamp(60px,9vw,140px)] px-[clamp(18px,4vw,44px)] overflow-hidden relative z-10 rounded-b-[48px] shadow-[0_20px_40px_rgba(0,0,0,0.15)]">
         <div className="max-w-[1320px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-[1.35fr_1fr] gap-[clamp(28px,5vw,80px)] items-end mb-[clamp(40px,5vw,72px)]">
+          <div className="grid grid-cols-1 md:grid-cols-[1.35fr_1fr] gap-[clamp(28px,5vw,80px)] items-end">
             <div>
               <div className="mono text-[13px] tracking-[0.14em] uppercase mb-[22px] flex items-center gap-[10px]">
                 <span className="w-[9px] h-[9px] rounded-full bg-ink"></span>
@@ -189,106 +184,100 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STICKY-STACK PHASES */}
-      <section id="cs-phases" className="relative bg-ink">
-        
-        {/* PHASE 01: CHAPTER 1 */}
-        <div className="sticky top-0 h-screen overflow-hidden rounded-t-[36px] bg-ink text-accent">
-          <div className="relative w-full h-full flex items-center overflow-y-auto">
-            <div aria-hidden="true" className="fixed right-[-3%] bottom-[-14%] font-bold text-[min(52vw,64vh)] leading-[0.7] tracking-[-0.06em] text-[rgba(255,244,141,0.07)] pointer-events-none select-none z-0">
+      {/* NEW READING EXPERIENCE: Sticky Backgrounds + Scrollable Flowing Text */}
+      
+      {/* PHASE 01: CHAPTER 1 */}
+      <section className="relative w-full z-10">
+        {/* The Pinned Background layer */}
+        <div className="sticky top-0 w-full h-screen bg-ink overflow-hidden rounded-t-[48px] -z-10 shadow-[0_-20px_40px_rgba(0,0,0,0.3)]">
+           <div aria-hidden="true" className="absolute right-[-3%] bottom-[-14%] font-bold text-[min(52vw,64vh)] leading-[0.7] tracking-[-0.06em] text-[rgba(255,244,141,0.07)] pointer-events-none select-none">
               01
-            </div>
-            <div className="relative z-10 max-w-[1320px] w-full mx-auto grid grid-cols-1 md:grid-cols-[1.05fr_1fr] gap-[clamp(24px,5vw,72px)] items-start pt-[96px] px-[clamp(18px,4vw,44px)] pb-[96px]">
-              <div>
-                <div className="flex items-center gap-[10px] mono text-[12px] tracking-[0.14em] mb-[26px]">
-                  <span className="text-accent">01</span><span className="w-[34px] h-[2px] bg-accent"></span>
-                  <span className="opacity-35">02</span><span className="w-[12px] h-[1px] bg-[rgba(255,244,141,0.35)]"></span>
-                  <span className="opacity-35">03</span>
-                </div>
-                <div className="mono text-[12px] tracking-[0.16em] uppercase mb-[18px] text-[rgba(255,244,141,0.7)]">
-                  ( {chapters[0].title} )
-                </div>
-                <h2 className="m-0 mb-[20px] font-bold text-[clamp(2.2rem,5vw,4.8rem)] leading-[0.94] tracking-[-0.03em] text-white">
-                  The Prediction.
-                </h2>
-                
-                <div className="story-content space-y-[32px] mt-[48px] max-w-2xl">
-                  {chapters[0].pages.slice(0, 15).map((pageObj, idx) => (
-                    <p key={idx} className="p-reveal m-0 text-[clamp(18px,2vw,24px)] leading-relaxed font-semibold text-white drop-shadow-sm">
-                      {pageObj.content}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+           </div>
         </div>
-
-        {/* PHASE 02: CHAPTER 2 */}
-        <div className="sticky top-0 h-screen overflow-hidden rounded-t-[36px] bg-bg text-ink shadow-[0_-20px_40px_rgba(0,0,0,0.15)]">
-          <div className="relative w-full h-full flex items-center overflow-y-auto">
-            <div aria-hidden="true" className="fixed right-[-3%] bottom-[-14%] font-bold text-[min(52vw,64vh)] leading-[0.7] tracking-[-0.06em] text-[rgba(14,14,12,0.06)] pointer-events-none select-none z-0">
-              02
-            </div>
-            <div className="relative z-10 max-w-[1320px] w-full mx-auto grid grid-cols-1 md:grid-cols-[1.05fr_1fr] gap-[clamp(24px,5vw,72px)] items-start pt-[96px] px-[clamp(18px,4vw,44px)] pb-[96px]">
-              <div>
-                <div className="flex items-center gap-[10px] mono text-[12px] tracking-[0.14em] mb-[26px]">
-                  <span className="opacity-35">01</span><span className="w-[12px] h-[1px] bg-[rgba(14,14,12,0.35)]"></span>
-                  <span className="text-ink">02</span><span className="w-[34px] h-[2px] bg-ink"></span>
-                  <span className="opacity-35">03</span>
-                </div>
-                <div className="mono text-[12px] tracking-[0.16em] uppercase mb-[18px] text-[rgba(14,14,12,0.6)]">
-                  ( {chapters[1].title} )
-                </div>
-                <h2 className="m-0 mb-[20px] font-bold text-[clamp(2.2rem,5vw,4.8rem)] leading-[0.94] tracking-[-0.03em] text-ink">
-                  The Two Moons.
-                </h2>
-                
-                <div className="story-content space-y-[32px] mt-[48px] max-w-2xl">
-                  {chapters[1].pages.slice(0, 15).map((pageObj, idx) => (
-                    <p key={idx} className="p-reveal m-0 text-[clamp(18px,2vw,24px)] leading-relaxed font-semibold text-ink drop-shadow-sm">
-                      {pageObj.content}
-                    </p>
-                  ))}
-                </div>
+        
+        {/* The Scrollable Text layer */}
+        <div className="relative z-10 pt-[150px] pb-[300px] px-[clamp(18px,4vw,44px)]">
+           <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+              <div className="flex items-center gap-[10px] mono text-[12px] tracking-[0.14em] mb-[26px]">
+                <span className="text-accent">01</span><span className="w-[34px] h-[2px] bg-accent"></span>
+                <span className="opacity-35 text-white">02</span><span className="w-[12px] h-[1px] bg-[rgba(255,244,141,0.35)]"></span>
+                <span className="opacity-35 text-white">03</span>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* PHASE 03: CHAPTER 3 */}
-        <div className="sticky top-0 h-screen overflow-hidden rounded-t-[36px] bg-[#eef5fa] text-[#303a40] shadow-[0_-20px_40px_rgba(0,0,0,0.2)]">
-          <div className="relative w-full h-full flex items-center overflow-y-auto">
-            <div aria-hidden="true" className="fixed right-[-3%] bottom-[-14%] font-bold text-[min(52vw,64vh)] leading-[0.7] tracking-[-0.06em] text-[rgba(48,58,64,0.06)] pointer-events-none select-none z-0">
-              03
-            </div>
-            <div className="relative z-10 max-w-[1320px] w-full mx-auto grid grid-cols-1 md:grid-cols-[1.05fr_1fr] gap-[clamp(24px,5vw,72px)] items-start pt-[96px] px-[clamp(18px,4vw,44px)] pb-[96px]">
-              <div>
-                <div className="flex items-center gap-[10px] mono text-[12px] tracking-[0.14em] mb-[26px]">
-                  <span className="opacity-35">01</span><span className="w-[12px] h-[1px] bg-[rgba(48,58,64,0.35)]"></span>
-                  <span className="opacity-35">02</span><span className="w-[12px] h-[1px] bg-[rgba(48,58,64,0.35)]"></span>
-                  <span className="text-[#303a40]">03</span><span className="w-[34px] h-[2px] bg-[#303a40]"></span>
-                </div>
-                <div className="mono text-[12px] tracking-[0.16em] uppercase mb-[18px] text-[rgba(48,58,64,0.6)]">
-                  ( {chapters[2].title} )
-                </div>
-                <h2 className="m-0 mb-[20px] font-bold text-[clamp(2.2rem,5vw,4.8rem)] leading-[0.94] tracking-[-0.03em] text-[#0a1216]">
-                  The Time Shift.
-                </h2>
-                
-                <div className="story-content space-y-[32px] mt-[48px] max-w-2xl">
-                  {chapters[2].pages.slice(0, 15).map((pageObj, idx) => (
-                    <p key={idx} className="p-reveal m-0 text-[clamp(18px,2vw,24px)] leading-relaxed font-semibold text-[#0a1216] drop-shadow-sm">
-                      {pageObj.content}
-                    </p>
-                  ))}
-                </div>
+              <h2 className="m-0 mb-[100px] font-bold text-[clamp(3rem,8vw,6.5rem)] leading-[0.94] tracking-[-0.03em] text-white">
+                The Prediction.
+              </h2>
+              
+              <div className="space-y-[12vh]">
+                {chapters[0].pages.map((pageObj, idx) => (
+                  <p key={idx} className="read-line m-0 text-[clamp(24px,3.5vw,42px)] leading-tight font-bold text-accent">
+                    {pageObj.content.replace(/^\d+\.\s*/, '') /* Strips the numbers for a cleaner read */}
+                  </p>
+                ))}
               </div>
-            </div>
-          </div>
+           </div>
         </div>
-
       </section>
+
+      {/* PHASE 02: CHAPTER 2 */}
+      <section className="relative w-full z-20">
+        <div className="sticky top-0 w-full h-screen bg-[#FFF48D] overflow-hidden rounded-t-[48px] -z-10 shadow-[0_-20px_40px_rgba(0,0,0,0.15)]">
+           <div aria-hidden="true" className="absolute right-[-3%] bottom-[-14%] font-bold text-[min(52vw,64vh)] leading-[0.7] tracking-[-0.06em] text-[rgba(14,14,12,0.06)] pointer-events-none select-none">
+              02
+           </div>
+        </div>
+        
+        <div className="relative z-10 pt-[150px] pb-[300px] px-[clamp(18px,4vw,44px)]">
+           <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+              <div className="flex items-center gap-[10px] mono text-[12px] tracking-[0.14em] mb-[26px]">
+                <span className="opacity-35 text-ink">01</span><span className="w-[12px] h-[1px] bg-[rgba(14,14,12,0.35)]"></span>
+                <span className="text-ink">02</span><span className="w-[34px] h-[2px] bg-ink"></span>
+                <span className="opacity-35 text-ink">03</span>
+              </div>
+              <h2 className="m-0 mb-[100px] font-bold text-[clamp(3rem,8vw,6.5rem)] leading-[0.94] tracking-[-0.03em] text-ink">
+                The Two Moons.
+              </h2>
+              
+              <div className="space-y-[12vh]">
+                {chapters[1].pages.map((pageObj, idx) => (
+                  <p key={idx} className="read-line m-0 text-[clamp(24px,3.5vw,42px)] leading-tight font-bold text-ink">
+                    {pageObj.content.replace(/^\d+\.\s*/, '')}
+                  </p>
+                ))}
+              </div>
+           </div>
+        </div>
+      </section>
+
+      {/* PHASE 03: CHAPTER 3 */}
+      <section className="relative w-full z-30">
+        <div className="sticky top-0 w-full h-screen bg-[#eef5fa] overflow-hidden rounded-t-[48px] -z-10 shadow-[0_-20px_40px_rgba(0,0,0,0.2)]">
+           <div aria-hidden="true" className="absolute right-[-3%] bottom-[-14%] font-bold text-[min(52vw,64vh)] leading-[0.7] tracking-[-0.06em] text-[rgba(48,58,64,0.06)] pointer-events-none select-none">
+              03
+           </div>
+        </div>
+        
+        <div className="relative z-10 pt-[150px] pb-[300px] px-[clamp(18px,4vw,44px)]">
+           <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+              <div className="flex items-center gap-[10px] mono text-[12px] tracking-[0.14em] mb-[26px]">
+                <span className="opacity-35 text-[#303a40]">01</span><span className="w-[12px] h-[1px] bg-[rgba(48,58,64,0.35)]"></span>
+                <span className="opacity-35 text-[#303a40]">02</span><span className="w-[12px] h-[1px] bg-[rgba(48,58,64,0.35)]"></span>
+                <span className="text-[#0a1216]">03</span><span className="w-[34px] h-[2px] bg-[#0a1216]"></span>
+              </div>
+              <h2 className="m-0 mb-[100px] font-bold text-[clamp(3rem,8vw,6.5rem)] leading-[0.94] tracking-[-0.03em] text-[#0a1216]">
+                The Time Shift.
+              </h2>
+              
+              <div className="space-y-[12vh]">
+                {chapters[2].pages.map((pageObj, idx) => (
+                  <p key={idx} className="read-line m-0 text-[clamp(24px,3.5vw,42px)] leading-tight font-bold text-[#303a40]">
+                    {pageObj.content.replace(/^\d+\.\s*/, '')}
+                  </p>
+                ))}
+              </div>
+           </div>
+        </div>
+      </section>
+
     </div>
   );
 }

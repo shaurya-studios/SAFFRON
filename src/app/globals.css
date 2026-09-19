@@ -63,13 +63,4 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
-/* Brutalist Drop Cap for Chapters */
-.story-content p:first-of-type::first-letter {
-  float: left;
-  font-size: clamp(4rem, 6vw, 6rem);
-  line-height: 0.8;
-  padding-right: 0.15em;
-  padding-top: 0.05em;
-  font-weight: 800;
-  text-transform: uppercase;
-}
+
