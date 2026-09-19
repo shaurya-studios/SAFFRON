@@ -4,15 +4,15 @@ import { chapter3 } from './03-management';
 
 export const chapters = [
   {
-    title: 'AFFECTION',
+    title: 'THE PREDICTION',
     pages: chapter1,
   },
   {
-    title: 'SITUATIONS',
+    title: 'THE SOUND',
     pages: chapter2,
   },
   {
-    title: 'MANAGEMENT',
+    title: 'THE SHIFT',
     pages: chapter3,
   }
 ];

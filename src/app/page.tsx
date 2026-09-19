@@ -163,13 +163,13 @@ export default function Home() {
                 <span>The Setup</span>
               </div>
               <h2 className="m-0 font-bold text-[clamp(2.2rem,5.8vw,5.2rem)] leading-[0.94] tracking-[-0.035em]">
-                It was his first day<br/>at a
+                It was raining<br/>outside,
                 <span className="relative inline-flex flex-col h-[0.94em] overflow-hidden align-bottom ml-2">
                   <span className="flex flex-col animate-[cs-rotword_6.5s_cubic-bezier(.76,0,.24,1)_infinite]">
-                    <span className="leading-[0.94em] text-ink">new school.</span>
-                    <span className="leading-[0.94em] text-ink">new life.</span>
-                    <span className="leading-[0.94em] text-ink">new hell.</span>
-                    <span className="leading-[0.94em] text-ink">new school.</span>
+                    <span className="leading-[0.94em] text-ink">September 2005.</span>
+                    <span className="leading-[0.94em] text-ink">Miles was 19.</span>
+                    <span className="leading-[0.94em] text-ink">World ends 2006.</span>
+                    <span className="leading-[0.94em] text-ink">September 2005.</span>
                   </span>
                   <svg viewBox="0 0 240 40" preserveAspectRatio="none" className="absolute left-0 bottom-[-6px] w-[100%] h-[22px] overflow-visible">
                     <path d="M6 22 C70 8 170 8 234 18" fill="none" stroke="var(--ink)" strokeWidth="5" strokeLinecap="round"></path>
@@ -179,10 +179,10 @@ export default function Home() {
             </div>
             <div>
               <p className="m-0 mb-[20px] text-[clamp(16px,1.3vw,19px)] leading-[1.5] font-semibold text-ink">
-                He stopped outside the classroom, took a breath, and stepped inside.
+                Miles was watching online videos in his television, suddenly a wave of rain came up with wind.
               </p>
               <div className="flex gap-[22px] flex-wrap mono text-[12px] tracking-[0.06em] uppercase text-ink-soft">
-                <span>◆ Suspense</span><span>◆ Drama</span><span>◆ Young Adult</span>
+                <span>◆ Sci-Fi</span><span>◆ Time Shift</span><span>◆ Mystery</span>
               </div>
             </div>
           </div>
@@ -209,11 +209,11 @@ export default function Home() {
                   ( {chapters[0].title} )
                 </div>
                 <h2 className="m-0 mb-[20px] font-bold text-[clamp(2.2rem,5vw,4.8rem)] leading-[0.94] tracking-[-0.03em] text-white">
-                  The Set Up.
+                  The Prediction.
                 </h2>
                 
                 <div className="space-y-[24px] mt-[48px] max-w-lg">
-                  {chapters[0].pages.slice(0, 10).map((pageObj, idx) => (
+                  {chapters[0].pages.slice(0, 15).map((pageObj, idx) => (
                     <p key={idx} className="p-reveal m-0 text-[clamp(15px,1.2vw,18px)] leading-[1.55] font-medium text-[#cfcfc4]">
                       {pageObj.content}
                     </p>
@@ -241,11 +241,11 @@ export default function Home() {
                   ( {chapters[1].title} )
                 </div>
                 <h2 className="m-0 mb-[20px] font-bold text-[clamp(2.2rem,5vw,4.8rem)] leading-[0.94] tracking-[-0.03em] text-ink">
-                  Then, something shifts.
+                  The Two Moons.
                 </h2>
                 
                 <div className="space-y-[24px] mt-[48px] max-w-lg">
-                  {chapters[1].pages.slice(0, 10).map((pageObj, idx) => (
+                  {chapters[1].pages.slice(0, 15).map((pageObj, idx) => (
                     <p key={idx} className="p-reveal m-0 text-[clamp(15px,1.2vw,18px)] leading-[1.55] font-medium text-ink-soft">
                       {pageObj.content}
                     </p>
@@ -273,11 +273,11 @@ export default function Home() {
                   ( {chapters[2].title} )
                 </div>
                 <h2 className="m-0 mb-[20px] font-bold text-[clamp(2.2rem,5vw,4.8rem)] leading-[0.94] tracking-[-0.03em] text-[#0a1216]">
-                  The Cutoff.
+                  The Time Shift.
                 </h2>
                 
                 <div className="space-y-[24px] mt-[48px] max-w-lg">
-                  {chapters[2].pages.slice(0, 10).map((pageObj, idx) => (
+                  {chapters[2].pages.slice(0, 15).map((pageObj, idx) => (
                     <p key={idx} className="p-reveal m-0 text-[clamp(15px,1.2vw,18px)] leading-[1.55] font-medium text-[#303a40]">
                       {pageObj.content}
                     </p>
