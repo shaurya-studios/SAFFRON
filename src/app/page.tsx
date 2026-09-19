@@ -212,9 +212,9 @@ export default function Home() {
                   The Prediction.
                 </h2>
                 
-                <div className="space-y-[24px] mt-[48px] max-w-lg">
+                <div className="story-content space-y-[32px] mt-[48px] max-w-2xl">
                   {chapters[0].pages.slice(0, 15).map((pageObj, idx) => (
-                    <p key={idx} className="p-reveal m-0 text-[clamp(15px,1.2vw,18px)] leading-[1.55] font-medium text-[#cfcfc4]">
+                    <p key={idx} className="p-reveal m-0 text-[clamp(18px,2vw,24px)] leading-relaxed font-semibold text-white drop-shadow-sm">
                       {pageObj.content}
                     </p>
                   ))}
@@ -244,9 +244,9 @@ export default function Home() {
                   The Two Moons.
                 </h2>
                 
-                <div className="space-y-[24px] mt-[48px] max-w-lg">
+                <div className="story-content space-y-[32px] mt-[48px] max-w-2xl">
                   {chapters[1].pages.slice(0, 15).map((pageObj, idx) => (
-                    <p key={idx} className="p-reveal m-0 text-[clamp(15px,1.2vw,18px)] leading-[1.55] font-medium text-ink-soft">
+                    <p key={idx} className="p-reveal m-0 text-[clamp(18px,2vw,24px)] leading-relaxed font-semibold text-ink drop-shadow-sm">
                       {pageObj.content}
                     </p>
                   ))}
@@ -276,9 +276,9 @@ export default function Home() {
                   The Time Shift.
                 </h2>
                 
-                <div className="space-y-[24px] mt-[48px] max-w-lg">
+                <div className="story-content space-y-[32px] mt-[48px] max-w-2xl">
                   {chapters[2].pages.slice(0, 15).map((pageObj, idx) => (
-                    <p key={idx} className="p-reveal m-0 text-[clamp(15px,1.2vw,18px)] leading-[1.55] font-medium text-[#303a40]">
+                    <p key={idx} className="p-reveal m-0 text-[clamp(18px,2vw,24px)] leading-relaxed font-semibold text-[#0a1216] drop-shadow-sm">
                       {pageObj.content}
                     </p>
                   ))}
