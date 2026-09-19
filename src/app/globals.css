@@ -3,11 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --bg: #FFF48D; --bg-rgb: 255,244,141;
-  --accent: #FFF48D; --accent-rgb: 255,244,141;
-  --ink: #0e0e0c; --ink-rgb: 14,14,12;
-  --paper: #faf7ea;
-  --ink-soft: #3a3a30; --ink-mute: #8f8f80;
+  /* Premium Sci-Fi / Saffron Theme */
+  --bg: #050505;
+  --accent: #FF4A00; /* Vivid Saffron/Orange */
+  --ink: #e2e8f0;    /* Silver/White text */
+  --paper: #111111;  /* Dark grey panels */
+  --ink-soft: #94a3b8;
+  --ink-mute: #475569;
 }
 
 html, body {
