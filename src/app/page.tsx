@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { chapters } from '@/data/chapters';
@@ -9,6 +9,36 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const bgMusicRef = useRef<HTMLAudioElement | null>(null);
+  const sfxHoverRef = useRef<HTMLAudioElement | null>(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  // Initialize Audio
+  useEffect(() => {
+    bgMusicRef.current = new Audio('https://actions.google.com/sounds/v1/weather/rain_heavy_loud.ogg');
+    bgMusicRef.current.loop = true;
+    bgMusicRef.current.volume = 0.4;
+
+    sfxHoverRef.current = new Audio('https://actions.google.com/sounds/v1/ui/button_click.ogg');
+    sfxHoverRef.current.volume = 0.2;
+  }, []);
+
+  const toggleSound = () => {
+    if (isMuted) {
+      bgMusicRef.current?.play().catch(() => console.log("Audio blocked"));
+      setIsMuted(false);
+    } else {
+      bgMusicRef.current?.pause();
+      setIsMuted(true);
+    }
+  };
+
+  const playHoverSfx = () => {
+    if (!isMuted && sfxHoverRef.current) {
+      sfxHoverRef.current.currentTime = 0;
+      sfxHoverRef.current.play().catch(() => {});
+    }
+  };
   
   useEffect(() => {
     // 1. The Boat Sway Effect (Subtle rocking of the entire container)
@@ -86,9 +116,14 @@ export default function Home() {
         {/* NAV (Minimal, Graphic Novel style) */}
         <nav className="fixed top-0 left-0 right-0 z-50 p-[clamp(20px,4vw,40px)] mix-blend-difference flex justify-between items-center">
           <span className="font-bold text-[18px] tracking-widest uppercase">Saffron</span>
-          <a href="#prologue" className="text-[14px] uppercase tracking-widest border border-white/30 px-6 py-2 hover:bg-white hover:text-black transition-colors">
-            Begin
-          </a>
+          <div className="flex gap-4">
+            <button onClick={toggleSound} onMouseEnter={playHoverSfx} className="text-[14px] uppercase tracking-widest border border-white/30 px-6 py-2 hover:bg-white hover:text-black transition-colors cursor-pointer">
+              Sound: {isMuted ? 'OFF' : 'ON'}
+            </button>
+            <a href="#prologue" onMouseEnter={playHoverSfx} className="text-[14px] uppercase tracking-widest border border-white/30 px-6 py-2 hover:bg-white hover:text-black transition-colors">
+              Begin
+            </a>
+          </div>
         </nav>
 
         {/* HERO / TITLE SCREEN */}
@@ -112,7 +147,7 @@ export default function Home() {
         {/* PROLOGUE */}
         <section id="prologue" className="min-h-screen flex items-center py-32 px-[clamp(20px,5vw,60px)]">
           <div className="max-w-3xl mx-auto w-full">
-            <h2 className="chapter-title text-[clamp(2rem,6vw,4rem)] font-bold italic mb-20 text-ink-mute border-l-4 border-ink pl-8">
+            <h2 onMouseEnter={playHoverSfx} className="chapter-title text-[clamp(2rem,6vw,4rem)] font-bold italic mb-20 text-ink-mute border-l-4 border-ink pl-8">
               The Setup
             </h2>
             <div className="space-y-32">
@@ -130,7 +165,7 @@ export default function Home() {
         <section className="min-h-screen flex items-center py-32 px-[clamp(20px,5vw,60px)] relative">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#080808] to-transparent -z-10"></div>
           <div className="max-w-3xl mx-auto w-full">
-            <h2 className="chapter-title text-[clamp(3rem,8vw,6rem)] font-black uppercase tracking-tighter mb-32 mix-blend-difference">
+            <h2 onMouseEnter={playHoverSfx} className="chapter-title text-[clamp(3rem,8vw,6rem)] font-black uppercase tracking-tighter mb-32 mix-blend-difference">
               I. The Prediction
             </h2>
             <div className="space-y-[25vh]">
@@ -146,7 +181,7 @@ export default function Home() {
         {/* CHAPTER 2 */}
         <section className="min-h-screen flex items-center py-32 px-[clamp(20px,5vw,60px)] relative">
           <div className="max-w-3xl mx-auto w-full">
-            <h2 className="chapter-title text-[clamp(3rem,8vw,6rem)] font-black uppercase tracking-tighter mb-32 mix-blend-difference">
+            <h2 onMouseEnter={playHoverSfx} className="chapter-title text-[clamp(3rem,8vw,6rem)] font-black uppercase tracking-tighter mb-32 mix-blend-difference">
               II. Two Moons
             </h2>
             <div className="space-y-[25vh]">
@@ -162,7 +197,7 @@ export default function Home() {
         {/* CHAPTER 3 */}
         <section className="min-h-screen flex items-center py-32 px-[clamp(20px,5vw,60px)] relative bg-[#020202]">
           <div className="max-w-3xl mx-auto w-full">
-            <h2 className="chapter-title text-[clamp(3rem,8vw,6rem)] font-black uppercase tracking-tighter mb-32 text-accent drop-shadow-[0_0_20px_rgba(153,0,0,0.5)]">
+            <h2 onMouseEnter={playHoverSfx} className="chapter-title text-[clamp(3rem,8vw,6rem)] font-black uppercase tracking-tighter mb-32 text-accent drop-shadow-[0_0_20px_rgba(153,0,0,0.5)]">
               III. The Time Shift
             </h2>
             <div className="space-y-[25vh]">
