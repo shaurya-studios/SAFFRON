@@ -12,7 +12,7 @@
   --ink-mute: #0a330a;
 }
 
-/* 2024 Sterile Theme (Will be applied to a specific container) */
+/* 2024 Sterile Theme */
 .theme-2024 {
   --bg: #ffffff;
   --ink: #000000;
@@ -20,6 +20,16 @@
   --paper: #f0f0f0;
   --ink-soft: #555555;
   --ink-mute: #aaaaaa;
+}
+
+/* Red Towel Theme */
+.theme-redtowel {
+  --bg: #090202;
+  --ink: #e5dada;
+  --accent: #aa0000;
+  --paper: #110505;
+  --ink-soft: #886666;
+  --ink-mute: #442222;
 }
 
 html, body {

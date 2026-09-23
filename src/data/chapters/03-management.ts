@@ -1,38 +1,20 @@
 export const chapter3 = [
-  {
-    page: 1,
-    content: "He retreated to his bed, wrapping himself in blankets, praying for the geometry of the morning."
-  },
-  {
-    page: 2,
-    content: "When he woke, the air in his bedroom felt sterile. Artificial."
-  },
-  {
-    page: 3,
-    content: "His heavy, beige CRT television was gone. In its place, a razor-thin display broadcasted a high-definition stream in impossible clarity."
-  },
-  {
-    page: 4,
-    content: "On his nightstand sat a sleek slab of black glass. A screen lit up when he touched it: July 24, 2024."
-  },
-  {
-    page: 5,
-    content: "Nineteen years. Gone in a single sleep."
-  },
-  {
-    page: 6,
-    content: "Before the panic could fully paralyze him, three sharp, metallic knocks rattled his apartment door."
-  },
-  {
-    page: 7,
-    content: "He looked through the peephole. Two figures in seamless white clean-suits stood in the hallway."
-  },
-  {
-    page: 8,
-    content: "—Timeline 05-Alpha has collapsed,— one whispered, pulling a humming device from his coat."
-  },
-  {
-    page: 9,
-    content: "—You weren't supposed to wake up.—"
-  }
+  { page: 1, content: "Miles zoomed in until the image broke into pixels. One moon was pale and ordinary. The other was faint, bruised at the edges." },
+  { page: 2, content: "He looked out the window. There was only one moon—or, in the afternoon light, no moon at all." },
+  { page: 3, content: "Miles returned to the photograph. The second moon was gone." },
+  { page: 4, content: "A new notification appeared on the screen. No sender. No app icon. SHIFT DETECTED." },
+  { page: 5, content: "That evening, Miles searched the house. In a cupboard, he found a thin book with no title." },
+  { page: 6, content: "Near the back, one sentence had been underlined so heavily the pen had torn the paper." },
+  { page: 7, content: "“When the sky divides, the displaced will remember.”" },
+  { page: 8, content: "Beneath it was a date: 31 DECEMBER 2005." },
+  { page: 9, content: "A knock came from the front door." },
+  { page: 10, content: "Two strangers stood outside. Their clothes were dry despite the rain beginning again." },
+  { page: 11, content: "“You heard the shift,” the first stranger said. “That means it heard you.”" },
+  { page: 12, content: "The book on the floor began turning its own pages. Every date blurred except one: 24 JULY 2024." },
+  { page: 13, content: "The second stranger glanced at it. “This version is already collapsing.”" },
+  { page: 14, content: "The hallway bent. For one impossible instant, Miles saw two streets occupying the same space." },
+  { page: 15, content: "The strangers took hold of him. The floor had begun to slope toward the dark opening behind them." },
+  { page: 16, content: "As they pulled him through, he heard the television switch on in the empty living room." },
+  { page: 17, content: "“It has already begun.”" },
+  { page: 18, content: "Then the door shut. On the other side, the rain kept falling." }
 ];

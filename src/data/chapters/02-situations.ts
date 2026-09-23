@@ -1,38 +1,22 @@
 export const chapter2 = [
-  {
-    page: 1,
-    content: "December 31st, 2005. 11:59 PM."
-  },
-  {
-    page: 2,
-    content: "The sound didn't come from the sky. It felt as if it originated inside his own skull."
-  },
-  {
-    page: 3,
-    content: "A frequency so absolute it shattered the living room windowpane and left a ringing vacuum of perfect silence."
-  },
-  {
-    page: 4,
-    content: "Miles stumbled into the cold night air, his breath pluming in the dark. The streetlights flickered and died."
-  },
-  {
-    page: 5,
-    content: "He looked up, expecting to see smoke or fire from a blast."
-  },
-  {
-    page: 6,
-    content: "Instead, he saw that the geometry of the constellations was entirely wrong. They were stretched."
-  },
-  {
-    page: 7,
-    content: "And hanging perfectly still above the fractured skyline..."
-  },
-  {
-    page: 8,
-    content: "...were two pale, identical moons."
-  },
-  {
-    page: 9,
-    content: "He asked his neighbors standing on their lawns, but they didn't look at him. They stared forward, perfectly still, like paused VHS tapes."
-  }
+  { page: 1, content: "At 11:58 p.m., Miles was asleep when the sound arrived." },
+  { page: 2, content: "It did not seem to come from outside. It came from everywhere at once—a vast, blunt note that swallowed the room." },
+  { page: 3, content: "The windows trembled. The walls shivered. Miles sat upright, breath caught in his throat." },
+  { page: 4, content: "Then it stopped." },
+  { page: 5, content: "He waited for pain, for ringing, for some sign that the sound had done what a sound that enormous should have done." },
+  { page: 6, content: "But his ears were perfectly normal. The clock continued ticking. Somewhere, a dog barked once." },
+  { page: 7, content: "Miles ran outside." },
+  { page: 8, content: "The street was empty. Rainwater ran along the curb. A loose sign swung gently above a closed shop." },
+  { page: 9, content: "Nothing burned. No alarms sounded. No one else had come out." },
+  { page: 10, content: "He checked the time. 11:59 p.m." },
+  { page: 11, content: "A minute later, the date changed. 1 January 2006." },
+  { page: 12, content: "Miles stood in the rain until the cold drove him back inside. He told himself it had been thunder." },
+  { page: 13, content: "When he woke, the room was bright." },
+  { page: 14, content: "His phone showed 24 July 2024." },
+  { page: 15, content: "He checked the television. The news was discussing a heatwave." },
+  { page: 16, content: "He went outside and asked a neighbour what year it was. “Twenty twenty-four,” the man said." },
+  { page: 17, content: "By noon, Miles had asked three people. They all gave him the same answer. No disaster. No missing years." },
+  { page: 18, content: "He returned home and searched the internet for the prediction. The clip was gone." },
+  { page: 19, content: "Then he found a photograph on his phone." },
+  { page: 20, content: "It showed the street outside his house at night. The sky was black. Above the rooftops hung two moons." }
 ];
