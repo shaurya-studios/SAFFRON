@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { chapters } from '@/data/chapters';
@@ -11,7 +11,28 @@ export default function Home() {
   const heroTextRef = useRef<HTMLHeadingElement>(null);
   const wipeRef = useRef<HTMLDivElement>(null);
   
+  // Audio state
+  const [audioEnabled, setAudioEnabled] = useState(false);
+  const soundsRef = useRef<{ rain?: any, drone?: any, whoosh?: any }>({});
+  
   useEffect(() => {
+    // 1. Init Audio via dynamic import to avoid SSR issues
+    import('howler').then(({ Howl, Howler }) => {
+      soundsRef.current.rain = new Howl({ 
+        src: ['https://actions.google.com/sounds/v1/weather/rain_heavy_loud.ogg'], 
+        loop: true, volume: 0 
+      });
+      soundsRef.current.drone = new Howl({ 
+        src: ['https://actions.google.com/sounds/v1/science_fiction/alien_spaceship_interior.ogg'], 
+        loop: true, volume: 0 
+      });
+      soundsRef.current.whoosh = new Howl({ 
+        src: ['https://actions.google.com/sounds/v1/science_fiction/sci_fi_whoosh.ogg'], 
+        volume: 0.7 
+      });
+    });
+
+    // 2. Visual GSAP Animations
     gsap.fromTo(
       wipeRef.current,
       { scaleY: 1 },
@@ -34,10 +55,10 @@ export default function Home() {
       repeat: -1
     });
 
+    // Reading Lines Animation (The Boat Style Sway)
     const readLines = document.querySelectorAll('.read-line');
     readLines.forEach((line, index) => {
       const direction = index % 2 === 0 ? 1 : -1;
-      
       gsap.fromTo(line, 
         { 
           opacity: 0, 
@@ -58,11 +79,50 @@ export default function Home() {
             start: 'top 95%',
             end: 'top 50%',
             scrub: 1.5,
+            onEnter: () => {
+              // Play a very faint whoosh when a new sentence enters view
+              if (soundsRef.current.whoosh && audioEnabled) {
+                 soundsRef.current.whoosh.volume(0.1);
+                 soundsRef.current.whoosh.play();
+              }
+            }
           }
         }
       );
     });
 
+    // Audio Environment Crossfades based on Scroll
+    ScrollTrigger.create({
+      trigger: '#ch2',
+      start: 'top center',
+      onEnter: () => {
+        if (!audioEnabled) return;
+        // Fade out rain, fade in drone (The Two Moons)
+        soundsRef.current.rain?.fade(1, 0, 2000);
+        if (!soundsRef.current.drone?.playing()) soundsRef.current.drone?.play();
+        soundsRef.current.drone?.fade(0, 0.8, 2000);
+      },
+      onLeaveBack: () => {
+        if (!audioEnabled) return;
+        // Fade back to rain
+        soundsRef.current.drone?.fade(0.8, 0, 2000);
+        soundsRef.current.rain?.fade(0, 1, 2000);
+      }
+    });
+
+    ScrollTrigger.create({
+      trigger: '#ch3',
+      start: 'top center',
+      onEnter: () => {
+        if (!audioEnabled) return;
+        // The Time Shift! Loud whoosh and intensity bump
+        soundsRef.current.whoosh?.volume(0.8);
+        soundsRef.current.whoosh?.play();
+        soundsRef.current.drone?.fade(0.8, 1, 500);
+      }
+    });
+
+    // Smooth Anchor Scrolling
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const anchor = target.closest('a');
@@ -78,8 +138,34 @@ export default function Home() {
     return () => {
       ScrollTrigger.getAll().forEach(t => t.kill());
       document.removeEventListener('click', handleAnchorClick);
+      // Clean up audio
+      if (soundsRef.current.rain) soundsRef.current.rain.unload();
+      if (soundsRef.current.drone) soundsRef.current.drone.unload();
+      if (soundsRef.current.whoosh) soundsRef.current.whoosh.unload();
     };
-  }, []);
+  }, [audioEnabled]); // Re-bind scroll triggers if audio state changes
+
+  const toggleAudio = () => {
+    if (!audioEnabled) {
+      // Turn ON
+      setAudioEnabled(true);
+      if (soundsRef.current.rain) {
+        soundsRef.current.rain.play();
+        soundsRef.current.rain.fade(0, 1, 1000);
+      }
+    } else {
+      // Turn OFF
+      setAudioEnabled(false);
+      import('howler').then(({ Howler }) => {
+         Howler.mute(true); // mute globally
+      });
+      return;
+    }
+    // unmute globally just in case
+    import('howler').then(({ Howler }) => {
+       Howler.mute(false);
+    });
+  };
 
   return (
     <div id="cs-root" className="relative w-full bg-bg text-ink selection:bg-accent selection:text-ink">
@@ -97,6 +183,13 @@ export default function Home() {
            <a href="#ch3" className="hover:text-accent transition-colors font-bold">III. The Shift</a>
         </div>
         <div className="flex items-center gap-[clamp(12px,2vw,30px)]">
+          <button 
+            onClick={toggleAudio} 
+            className={`mono text-[11px] uppercase tracking-widest font-bold flex items-center gap-2 transition-colors ${audioEnabled ? 'text-accent' : 'text-ink-soft hover:text-ink'}`}
+          >
+            <span className={`w-2 h-2 rounded-full ${audioEnabled ? 'bg-accent animate-pulse' : 'bg-ink-soft'}`}></span>
+            AUDIO {audioEnabled ? 'ON' : 'OFF'}
+          </button>
           <a href="#ch1" className="no-underline font-bold text-[15px] bg-accent text-ink px-[24px] py-[12px] rounded-full transition-transform hover:scale-105 shadow-[0_0_30px_rgba(0,255,255,0.4)]">
             Read Book →
           </a>
@@ -140,7 +233,7 @@ export default function Home() {
             Begin Reading →
           </a>
           <span className="max-w-[400px] text-[clamp(15px,1.2vw,17px)] leading-[1.5] font-bold text-ink">
-            For the ones willing to make something beautiful while still trying to make ends meet.
+            Turn your audio ON for the full immersive graphic-novel experience.
           </span>
         </div>
       </header>
