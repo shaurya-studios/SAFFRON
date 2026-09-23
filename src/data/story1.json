@@ -1,0 +1,76 @@
+{
+  "id": "story1",
+  "title": "2006: A LITTLE SHIFT",
+  "signalColor": "#00F0FF",
+  "accentColor": "#FFB000",
+  "scenes": [
+    {
+      "id": "1.1",
+      "name": "RAIN",
+      "captions": [
+        { "text": "9 September 2005. It would not stop raining.", "mode": "fade-up", "start": 0.1 },
+        { "text": "Miles, nineteen, thumbed through videos on the TV while the storm argued with the roof.", "mode": "fade-up", "start": 0.4 },
+        { "text": "Something outside broke.", "mode": "shout", "start": 0.8, "trauma": 0.5, "sound": "crash" }
+      ]
+    },
+    {
+      "id": "1.2",
+      "name": "THE RUMOUR",
+      "captions": [
+        { "text": "THE WORLD ENDS IN 2006.", "mode": "glitch", "start": 0.1 },
+        { "text": "Rumours. Miles rolled his eyes and swiped it away.", "mode": "fade-up", "start": 0.3 },
+        { "text": "Bro. It's real. It's in a book nobody can name. Even World War 3 is in it... and it already happened.", "mode": "lurch", "speaker": "friend", "start": 0.6, "sound": "ring" },
+        { "text": "It's a rumour with better marketing.", "mode": "fade-up", "speaker": "miles", "start": 0.8 }
+      ]
+    },
+    {
+      "id": "1.3",
+      "name": "THE LAST YEAR",
+      "captions": [
+        { "text": "Months passed. The prediction became a religion. People loved harder, laughed louder, called their mothers.", "mode": "fade-up", "start": 0.2 },
+        { "text": "A few stayed unconvinced. Miles was one of them.", "mode": "fade-up", "start": 0.7 }
+      ]
+    },
+    {
+      "id": "1.4",
+      "name": "THE SOUND",
+      "captions": [
+        { "text": "31 December 2005. 11:58 p.m.", "mode": "typewriter", "start": 0.1 },
+        { "text": "A sound so large it should have ended the world.", "mode": "fade-up", "start": 0.3 },
+        { "text": "A person a thousand kilometres away would have heard it. It should have made him deaf forever.", "mode": "fade-up", "start": 0.5 },
+        { "text": "His ears were fine. That was the first thing that felt wrong.", "mode": "lurch", "start": 0.7, "sound": "boom", "trauma": 1.0 },
+        { "text": "So he went back to bed.", "mode": "fade-up", "start": 0.9 }
+      ]
+    },
+    {
+      "id": "1.5",
+      "name": "TWO MOONS",
+      "captions": [
+        { "text": "The next evening, Miles saw two moons.", "mode": "fade-up", "start": 0.2 },
+        { "text": "Not a special effect. Not a weapon. Just... two.", "mode": "fade-up", "start": 0.5 },
+        { "text": "He asked. They laughed. One of them crossed the street.", "mode": "fade-up", "start": 0.8 }
+      ]
+    },
+    {
+      "id": "1.6",
+      "name": "THE DATE",
+      "captions": [
+        { "text": "He remembered going to sleep on 31 December 2005.", "mode": "fade-up", "start": 0.1 },
+        { "text": "The television said: 24 July 2024.", "mode": "glitch", "start": 0.4 },
+        { "text": "Eighteen years. Six thousand seven hundred eighty days. He had not aged a single one.", "mode": "lurch", "start": 0.8 }
+      ]
+    },
+    {
+      "id": "1.7",
+      "name": "THEY ARRIVE",
+      "captions": [
+        { "text": "He understood. And that was when they came.", "mode": "fade-up", "start": 0.1 },
+        { "text": "Miles could not dodge it.", "mode": "fade-up", "start": 0.3 },
+        { "text": "There was nothing to dodge.", "mode": "glitch", "start": 0.5 },
+        { "text": "Timeline shifts this fast and the brain is still intact. It's rare.", "mode": "typewriter", "speaker": "strangerA", "start": 0.7 },
+        { "text": "Log him. Next MC.", "mode": "typewriter", "speaker": "strangerB", "start": 0.8 },
+        { "text": "The one who survives a shift and still understands everything is called an MC. A Main Character.", "mode": "lurch", "start": 0.9 }
+      ]
+    }
+  ]
+}

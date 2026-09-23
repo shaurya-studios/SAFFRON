@@ -1,0 +1,64 @@
+{
+  "id": "story2",
+  "title": "THE RED TOWEL",
+  "signalColor": "#E10600",
+  "scenes": [
+    {
+      "id": "2.1",
+      "name": "MORNING",
+      "captions": [
+        { "text": "Lakshya, twenty-one, Rajasthan. A normal morning.", "mode": "fade-up", "start": 0.2 },
+        { "text": "He finished his bath and reached for the red towel.", "mode": "fade-up", "start": 0.7 }
+      ]
+    },
+    {
+      "id": "2.2",
+      "name": "THE FIRST ANT",
+      "captions": [
+        { "text": "There were ants in the towel.", "mode": "fade-up", "start": 0.3 },
+        { "text": "Just ants, he thought.", "mode": "fade-up", "start": 0.7 }
+      ]
+    },
+    {
+      "id": "2.3",
+      "name": "THE BITE",
+      "captions": [
+        { "text": "The pain was not pain. It was a sound. A colour. A punishment.", "mode": "shout", "start": 0.4, "trauma": 0.8 },
+        { "text": "He tore them off, one by one.", "mode": "lurch", "start": 0.8 }
+      ]
+    },
+    {
+      "id": "2.4",
+      "name": "THE SEARCH",
+      "captions": [
+        { "text": "Two to five minutes of searching. He wished it had taken longer.", "mode": "fade-up", "start": 0.2 },
+        { "text": "Paraponera clavata. The bullet ant.", "mode": "typewriter", "start": 0.5 },
+        { "text": "There are no bullet ants in Rajasthan. There should not be one within seven thousand kilometres of this bathroom.", "mode": "fade-up", "start": 0.8 }
+      ]
+    },
+    {
+      "id": "2.5",
+      "name": "THE NEWS",
+      "captions": [
+        { "text": "The news anchor stopped mid-sentence. Then the TV filled with them.", "mode": "fade-up", "start": 0.5 }
+      ]
+    },
+    {
+      "id": "2.6",
+      "name": "OUTSIDE",
+      "captions": [
+        { "text": "The city was not being attacked.", "mode": "fade-up", "start": 0.3 },
+        { "text": "The city was being walked through.", "mode": "fade-up", "start": 0.7 }
+      ]
+    },
+    {
+      "id": "2.7",
+      "name": "THE TOWEL",
+      "captions": [
+        { "text": "They weren't coming for him.", "mode": "fade-up", "start": 0.2 },
+        { "text": "They were coming through him.", "mode": "lurch", "start": 0.4 },
+        { "text": "Behind them, something else was pressing against the cloth.", "mode": "fade-up", "start": 0.8 }
+      ]
+    }
+  ]
+}

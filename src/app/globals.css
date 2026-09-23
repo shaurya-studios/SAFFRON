@@ -1,27 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Devanagari:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --color-paper: #EFE8DA;
+  --color-ink: #0B0B0F;
+  --color-s1-cyan: #00F0FF;
+  --color-s1-amber: #FFB000;
+  --color-s2-red: #E10600;
+  --color-hub-bg: #07070A;
+  --color-hub-ink: #FFFFFF;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: 'IBM Plex Mono', monospace;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+  cursor: none; /* Custom cursor */
+}
+
+h1, h2, h3, .display-text {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+}
+
+/* Fluid type scale */
+.text-fluid-body {
+  font-size: clamp(18px, 1.2rem + 0.5vw, 24px);
+  line-height: 1.4;
+}
+
+.text-fluid-display {
+  font-size: clamp(3rem, 5vw + 2rem, 8rem);
+  line-height: 0.9;
+}
+
+/* Lenis smooth scroll classes */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Global Grain Overlay */
+.grain-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.08;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 12px; height: 12px;
+  background-color: var(--color-ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.custom-cursor.active {
+  width: 24px; height: 24px;
+  background-color: var(--color-s1-cyan);
 }
