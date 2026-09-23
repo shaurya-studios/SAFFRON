@@ -4,11 +4,11 @@ import { chapter3 } from './03-management';
 
 export const chapters = [
   {
-    title: 'THE PREDICTION',
+    title: 'THE ANCHOR',
     pages: chapter1,
   },
   {
-    title: 'THE SOUND',
+    title: 'THE FRACTURE',
     pages: chapter2,
   },
   {

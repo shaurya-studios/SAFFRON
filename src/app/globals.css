@@ -3,19 +3,29 @@
 @tailwind utilities;
 
 :root {
-  /* 1000% The Boat Inspiration: Dark, Gritty, Monochrome Ink */
-  --bg: #050505;
-  --ink: #e5e5e5;
-  --accent: #990000; /* Deep Blood Red for highlights */
-  --paper: #0a0a0a;
-  --ink-soft: #888888;
-  --ink-mute: #333333;
+  /* Default: The 2005 CRT Aesthetic */
+  --bg: #0a0e0a;
+  --ink: #33ff33; /* Phosphor Green */
+  --accent: #ff3333; /* Warning Red */
+  --paper: #020305;
+  --ink-soft: #1f991f;
+  --ink-mute: #0a330a;
+}
+
+/* 2024 Sterile Theme (Will be applied to a specific container) */
+.theme-2024 {
+  --bg: #ffffff;
+  --ink: #000000;
+  --accent: #ff0000;
+  --paper: #f0f0f0;
+  --ink-soft: #555555;
+  --ink-mute: #aaaaaa;
 }
 
 html, body {
   background: var(--bg);
   color: var(--ink);
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; /* Graphic Novel Serif */
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   overflow-x: hidden;
   overscroll-behavior: none;
 }
@@ -29,31 +39,26 @@ html, body {
   height: 100vh;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.15;
+  opacity: 0.12;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Rain Effect */
-.rain-overlay {
+/* Analog CRT Overlay */
+.crt-overlay {
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
-  pointer-events: none;
   z-index: 9998;
-  background: repeating-linear-gradient(
-    15deg,
-    transparent,
-    transparent 2px,
-    rgba(255, 255, 255, 0.03) 2px,
-    rgba(255, 255, 255, 0.03) 4px
-  );
-  animation: rainDrop 0.2s linear infinite;
+  pointer-events: none;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+  animation: scanline 10s linear infinite;
   opacity: 0.6;
 }
 
-@keyframes rainDrop {
-  0% { transform: translateY(0) translateX(0); }
-  100% { transform: translateY(20px) translateX(-5px); }
+@keyframes scanline {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 -100vh; }
 }
 
 .lenis.lenis-smooth {

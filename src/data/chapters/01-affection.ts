@@ -1,54 +1,38 @@
 export const chapter1 = [
   {
     page: 1,
-    content: "1. It was raining outside."
+    content: "It hasn't stopped raining since September."
   },
   {
     page: 2,
-    content: "2. Miles was watching online videos in his television, suddenly a wave of rain came up with wind."
+    content: "Miles sat bathed in the hum of a cathode-ray tube, scrolling through forgotten forums in the dark."
   },
   {
     page: 3,
-    content: "3. The wave made miles to stand up cuz it broke something outside."
+    content: "The thread title was buried on page four of a conspiracy board: 'The World Ends in 2006. Here is the math.'"
   },
   {
     page: 4,
-    content: "4. It was 9 September 2005, miles was 19 year old."
+    content: "He read through the frantic equations and astrological predictions, dismissing it as paranoid fiction."
   },
   {
     page: 5,
-    content: "5. However he again went to watch videos."
+    content: "But then the landline rang. The sound cut through the heavy rhythm of the rain against his window."
   },
   {
     page: 6,
-    content: "6. He was scrolling then suddenly a video came up with the topic that the world will end in the year 2006."
+    content: "It was his friend. His voice trembled through the static on the line."
   },
   {
     page: 7,
-    content: "7. Miles thought that it was just some rumors."
+    content: "—Miles. Did you read the book? They mapped the war. They mapped everything.—"
   },
   {
     page: 8,
-    content: "8. He completely ignored."
+    content: "Miles hung up the phone. It was just an urban legend getting out of hand."
   },
   {
     page: 9,
-    content: "9. But the very next moment his friend called him and told him that their is a prediction that the world will end in 2006."
-  },
-  {
-    page: 10,
-    content: "10. Miles told him that these might be some normal rumors."
-  },
-  {
-    page: 11,
-    content: "11. But miles friend told him that it wasn't a normal prediction, it was already written in an unknown book and even the world War 3 was also written in it that happened already."
-  },
-  {
-    page: 12,
-    content: "12. He also said that the prediction was also done by some astrologers."
-  },
-  {
-    page: 13,
-    content: "13. But still miles don't believe in this."
+    content: "He turned back to the glowing screen. The rain continued to fall."
   }
 ];
