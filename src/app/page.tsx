@@ -58,8 +58,8 @@ export default function Home() {
       gsap.fromTo(p, 
         { 
           opacity: 0, 
-          y: 40,
-          filter: 'blur(8px)'
+          y: 80,
+          filter: 'blur(24px)'
         },
         { 
           opacity: 1,
@@ -70,7 +70,7 @@ export default function Home() {
             trigger: p,
             start: 'top 85%',
             end: 'top 40%',
-            scrub: 2, // Smooth, slow scrub to match The Boat's pacing
+            scrub: 2.5,
           }
         }
       );
@@ -84,10 +84,11 @@ export default function Home() {
         start: 'top 70%',
         onEnter: () => {
           gsap.fromTo(ch, 
-            { opacity: 0 },
+            { opacity: 0, filter: 'blur(30px)' },
             { 
               opacity: 1, 
-              duration: 0.1, 
+              filter: 'blur(0px)',
+              duration: 0.15, 
               ease: 'power4.inOut',
               yoyo: true,
               repeat: 3
