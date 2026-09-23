@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import Link from 'next/link';
-import Lenis from '@studio-freight/lenis';
+import Lenis from 'lenis';
 
 export default function Home() {
   const [started, setStarted] = useState(false);
