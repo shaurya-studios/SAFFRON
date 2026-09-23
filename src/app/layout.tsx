@@ -1,21 +1,9 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import SmoothScroller from "@/components/SmoothScroller";
-
-const bricolage = Bricolage_Grotesque({
-  subsets: ["latin"],
-  variable: "--font-bricolage",
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-});
 
 export const metadata: Metadata = {
-  title: "SAFFRON — An Interactive Story",
-  description: "A digital reading experience.",
+  title: "SEAMS — Two Interactive Stories",
+  description: "Two stories about the moment the world stops making sense.",
 };
 
 export default function RootLayout({
@@ -25,10 +13,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bricolage.variable} ${geistMono.variable} antialiased`} data-theme="yellow">
-        <SmoothScroller>
-          {children}
-        </SmoothScroller>
+      <body className="antialiased">
+        {children}
       </body>
     </html>
   );
