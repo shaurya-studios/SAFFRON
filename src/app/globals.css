@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  /* Premium Sci-Fi / Saffron Theme */
-  --bg: #050505;
-  --accent: #FF4A00; /* Vivid Saffron/Orange */
-  --ink: #e2e8f0;    /* Silver/White text */
-  --paper: #111111;  /* Dark grey panels */
-  --ink-soft: #94a3b8;
-  --ink-mute: #475569;
+  /* Vibrant & Colorful Theme (Inspired by energetic/vibrant art) */
+  --bg: #FF0055;       /* Hot Pink */
+  --accent: #00FFFF;   /* Electric Cyan */
+  --ink: #111111;      /* Deep Ink */
+  --paper: #7000FF;    /* Vibrant Purple */
+  --ink-soft: #00FF66; /* Neon Green */
+  --ink-mute: #FFFF00; /* Bright Yellow */
 }
 
 html, body {

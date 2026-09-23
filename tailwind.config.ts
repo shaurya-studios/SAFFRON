@@ -15,6 +15,12 @@ const config: Config = {
         'char-umbra': '#16110B',
         'thread-vermilion': '#A63A2C',
         'dust-gold': '#E8B857',
+        bg: 'var(--bg)',
+        accent: 'var(--accent)',
+        ink: 'var(--ink)',
+        paper: 'var(--paper)',
+        'ink-soft': 'var(--ink-soft)',
+        'ink-mute': 'var(--ink-mute)',
       },
       fontFamily: {
         display: ['var(--font-fraunces)', 'serif'],
