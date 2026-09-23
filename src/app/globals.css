@@ -3,83 +3,25 @@
 @tailwind utilities;
 
 :root {
-  /* Default: The 2005 CRT Aesthetic */
-  --bg: #0a0e0a;
-  --ink: #33ff33; /* Phosphor Green */
-  --accent: #ff3333; /* Warning Red */
-  --paper: #020305;
-  --ink-soft: #1f991f;
-  --ink-mute: #0a330a;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
 }
 
-/* 2024 Sterile Theme */
-.theme-2024 {
-  --bg: #ffffff;
-  --ink: #000000;
-  --accent: #ff0000;
-  --paper: #f0f0f0;
-  --ink-soft: #555555;
-  --ink-mute: #aaaaaa;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
 }
 
-/* Red Towel Theme */
-.theme-redtowel {
-  --bg: #090202;
-  --ink: #e5dada;
-  --accent: #aa0000;
-  --paper: #110505;
-  --ink-soft: #886666;
-  --ink-mute: #442222;
-}
-
-html, body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  overflow-x: hidden;
-  overscroll-behavior: none;
-}
-
-/* Gritty Film / Ink Noise */
-.ink-noise {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.12;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-/* Analog CRT Overlay */
-.crt-overlay {
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  z-index: 9998;
-  pointer-events: none;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  background-size: 100% 2px, 3px 100%;
-  animation: scanline 10s linear infinite;
-  opacity: 0.6;
-}
-
-@keyframes scanline {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 -100vh; }
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-.lenis.lenis-smooth iframe {
-  pointer-events: none;
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
